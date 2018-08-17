@@ -37,5 +37,9 @@ Django, like Angular, has many built-in [helper tags and filters](https://docs.d
 ## URLS
 - '/' - homepage
 - '/login' - login page and link to registration
-- '/categories' - all categories, with three products in each category
+- '/category' - all categories, with three products in each category
 - '/account' - account settings
+- '/category' - to page with all categories and three itmes from each category
+- '/category/<categoryID>' - to page with all products within a category
+- '/product/<searchTerm>' - to page with all products that match a search term
+- '/product/<productID>' - to detail page for a single product

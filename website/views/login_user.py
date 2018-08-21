@@ -1,10 +1,7 @@
-from django.contrib.auth import logout, login, authenticate
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.contrib.auth import login, authenticate
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import RequestContext
-
-from website.forms import UserForm
 
 
 def login_user(request):

@@ -8,7 +8,7 @@ Model for Category include the following:
     cat_name is a string defaulted to ""
 '''
 
-class Category(models.Models):
+class Category(models.Model):
     cat_name = models.CharField(default="", max_length=100)
 
     class Meta:

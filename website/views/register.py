@@ -38,7 +38,7 @@ def register(request):
 
         return login_user(request)
 
-    elif request.method == 'GET':
-        user_form = UserForm()
-        template_name = 'register.html'
-        return render(request, template_name, {'user_form': user_form})
+    elif request.method == 'GET': # If we go to /register, this will load. 
+        user_form = UserForm() # UserForm is from Django, 
+        return render(request, 'register.html', {'user_form': user_form})  # renders form
+        # {'user_form': user_form} <-- this contains the form objects

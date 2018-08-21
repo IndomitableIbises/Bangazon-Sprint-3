@@ -13,17 +13,17 @@ class Payment(models.Model):
     
     name = models.CharField(max_length=250)
     account_num = models.IntegerField()
-    active = models.booleanField() 
+    active = models.BooleanField() 
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
     )
 
-class Meta:
+    class Meta:
         db_table = 'payment'
 
-    def __str__(self):
+        def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
+        def get_absolute_url(self):
         return reverse("bang:payment_detail", kwargs={"pk": self.pk}) 

@@ -5,3 +5,4 @@ from .register import register
 from .sell_product import sell_product
 from .user_logout import user_logout
 # from .edit_profile import edit_profile
+# from .add_payment import add_payment

@@ -4,3 +4,5 @@ from .login_user import login_user
 from .register import register
 from .sell_product import sell_product
 from .user_logout import user_logout
+from .list_categories import list_categories
+# from .add_payment import add_payment

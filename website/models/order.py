@@ -10,3 +10,9 @@ class Order(models.Model):
     payment = models.ForeignKey(Payment, blank=True, null=True, on_delete=models.PROTECT)
     completed_date = models.DateField(blank=True, null=True)
     shopping_cart = models.ManyToManyField(Product, on_delete=models.PROTECT)
+
+    class Meta:
+        db_table = 'Order'
+
+        __str__(self):
+            return self.id

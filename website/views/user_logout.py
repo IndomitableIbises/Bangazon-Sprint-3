@@ -4,8 +4,6 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render
 from django.template import RequestContext
 
-from website.forms import UserForm
-
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required

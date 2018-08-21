@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^sell$', views.sell_product, name='sell'),
     url(r'^products$', views.list_products, name='list_products'),
     # url(r'^edit-profile$', views.edit_profile, name='edit_profile'),
+    # Category URLS
+    url(r'^categories$', views.list_categories, name='list_categories'),
 ]

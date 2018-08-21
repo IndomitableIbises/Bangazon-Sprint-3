@@ -25,5 +25,5 @@ class Payment(models.Model):
         def __str__(self):
             return self.name
 
-        def get_absolute_url(self):
-            return reverse("bang:payment_detail", kwargs={"pk": self.pk}) 
+        # def get_absolute_url(self):
+        #     return reverse("bang:payment_detail", kwargs={"pk": self.pk}) 

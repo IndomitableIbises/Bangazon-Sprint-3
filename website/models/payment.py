@@ -7,13 +7,13 @@ class Payment(models.Model):
     """Payment
 
     Author: Hayley Landsberg
-    
+
     This class represents the Payment resource in the database.
     """
-    
+
     name = models.CharField(max_length=250)
     account_num = models.IntegerField()
-    active = models.BooleanField() 
+    active = models.BooleanField()
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -22,8 +22,8 @@ class Payment(models.Model):
     class Meta:
         db_table = 'payment'
 
-    def __str__(self):
-        return self.name
+        def __str__(self):
+            return self.name
 
-    def get_absolute_url(self):
-        return reverse("website:payment_detail", kwargs={"pk": self.pk}) 
+        # def get_absolute_url(self):
+        #     return reverse("website:payment_detail", kwargs={"pk": self.pk})

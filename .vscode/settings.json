@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/Users/eagobert/.pyenv/versions/3.7.0/bin/python",
+    "python.pythonPath": "${workspaceFolder}\\bang\\Scripts\\python.exe",
     "python.linting.pylintEnabled": false
 }

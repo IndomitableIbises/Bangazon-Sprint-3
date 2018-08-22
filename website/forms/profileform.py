@@ -1,8 +1,8 @@
-from django.contrib.auth.models import User
+from website.models import Profile
 from django import forms
 
-class UserForm(forms.ModelForm):
+class ProfileForm(forms.ModelForm):
 
     class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'address', 'phone',)
+        model = Profile
+        fields = ('address', 'phone', )

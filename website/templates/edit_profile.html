@@ -10,17 +10,17 @@
 
 <body>
     <p class="edit">You about to edit the profile, sucka</p>
-    <form id="profile_form" method="post" action="{% url 'website:profile' %}" enctype="multipart/form-data">
+    <form id="profile_form" method="post" action="{% url 'website:edit_profile' %}" enctype="multipart/form-data">
 
             {% csrf_token %}
-
-            <!-- Display each form. The as_p method wraps each element in a paragraph
-                 (<p>) element. This ensures each element appears on a new line,
-                 making everything look neater. -->
-            {{ user_form.as_p }}
+<label for="">First Name:</label>
+            {{ user_form.first_name }}
+<label for="">Last Name:</label>
+            {{ user_form.last_name }}
+            {{ profile_form }}
 
             <!-- Provide a button to click to submit the form. -->
-            <input type="submit" name="submit" value="Register" />
+            <input type="submit" name="submit" value="Save" />
         </form>
 
 

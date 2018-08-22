@@ -1,8 +1,8 @@
 from django import forms
 from website.models import User
 
-class ProductForm(forms.ModelForm):
+class UserEditForm(forms.ModelForm):
 
     class Meta:
-        model = Product
-        fields = ('title', 'description', 'price', 'quantity',)
+        model = User
+        fields = ('email', 'first_name', 'last_name')

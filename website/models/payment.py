@@ -22,16 +22,8 @@ class Payment(models.Model):
     class Meta:
         db_table = 'payment'
 
-<<<<<<< HEAD
-        def __str__(self):
-            return self.name
-
-        # def get_absolute_url(self):
-        #     return reverse("bang:payment_detail", kwargs={"pk": self.pk}) 
-=======
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
         return reverse("website:payment_detail", kwargs={"pk": self.pk}) 
->>>>>>> 082425e0cbae4902567a78e4f4621f710ae242c8

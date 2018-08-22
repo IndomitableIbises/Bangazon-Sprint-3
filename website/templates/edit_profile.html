@@ -12,16 +12,16 @@
     <p class="edit">You about to edit the profile, sucka</p>
     <form id="profile_form" method="post" action="{% url 'website:edit_profile' %}" enctype="multipart/form-data">
 
-            {% csrf_token %}
-<label for="">First Name:</label>
-            {{ user_form.first_name }}
-<label for="">Last Name:</label>
-            {{ user_form.last_name }}
-            {{ profile_form }}
+        {% csrf_token %}
+        <label for="">First Name:</label>
+        {{ user_form.first_name }}
+        <label for="">Last Name:</label>
+        {{ user_form.last_name }}
+        {{ profile_form }}
 
-            <!-- Provide a button to click to submit the form. -->
-            <input type="submit" name="submit" value="Save" />
-        </form>
+        <!-- Provide a button to click to submit the form. -->
+        <input type="submit" name="submit" value="Save" />
+    </form>
 
 
 </body>

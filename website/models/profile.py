@@ -13,8 +13,4 @@ class Profile(models.Model):
     phone = models.CharField(max_length=100)
 
     class Meta:
-<<<<<<< HEAD
-        db_table = 'profile'
-=======
         db_table = "profile"
->>>>>>> 082425e0cbae4902567a78e4f4621f710ae242c8

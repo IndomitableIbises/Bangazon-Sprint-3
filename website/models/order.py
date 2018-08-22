@@ -13,7 +13,11 @@ class Order(models.Model):
     shopping_cart = models.ManyToManyField(Product)
 
     class Meta:
+<<<<<<< HEAD
         db_table = 'Order'
+=======
+        db_table = 'order'
+>>>>>>> 082425e0cbae4902567a78e4f4621f710ae242c8
 
     def __str__(self):
         return self.id

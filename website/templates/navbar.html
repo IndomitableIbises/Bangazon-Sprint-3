@@ -1,0 +1,27 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'website/navbar.css' %}">
+
+<nav>
+    <a href="{% url 'website:index' %}">Home</a>
+
+    <input type="search" placeholder="Search For Goodies">
+    <a href="{% url 'website:list_products' %}">All Products</a>
+    {% comment %}
+    <a href="{% url 'website:sells' %}">Sell A Product</a>
+    {% if user.is_authenticated %}
+    <div class="dropdown_nav">
+        <a href="#">My Account</a>
+        <div class="dropdown_content">
+            <a href="#">My Products</a>
+            <a href="#">Order History</a>
+            <a href="#">Payment</a>
+        </div>
+    </div>
+    {% endcomment %} {% if user.is_authenticated %}
+    <a href="{% url 'website:logout' %}">Logout</a>
+    <a href="#">My Account</a>
+    {% else %}
+    <div><a href="{% url 'website:login' %}">Login/Register</a></div>
+    {% endif %}
+</nav>

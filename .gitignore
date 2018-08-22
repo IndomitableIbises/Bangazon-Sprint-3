@@ -8,4 +8,4 @@ obj
 *.sqlite3
 bang
 /website/migrations/
-.vscode/
+.vscode

@@ -9,3 +9,9 @@ obj
 bang
 /website/migrations/
 .vscode/
+/website/Include
+/website/tcl
+/website/Lib
+*.json
+*.h
+*.sh

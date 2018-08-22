@@ -1,23 +1,20 @@
 # Author: Raf
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import RequestContext
-
+from website.models import Category
 from website.forms import CategoryForm
+
 
 @login_required
 def add_category(request):
-        if request.method == 'GET':
-            category_form = CategoryForm()
-            return render(request, 'add_category.html', {'category_form': category_form})
+    if request.method == 'POST':
+        category_form = CategoryForm(request.POST)
+        if category_form.is_valid():
+            new_category = category_form.save()
+            new_category.save()
+            return redirect('website:list_categories')
 
-        elif request.method == 'POST':
-            form_data = request.POST
 
-        c = Category(
-            cat_name = form_data['cat_name'],
-
-        )
-        c.save()
-        return render(request, 'category/success.html', {})
+    return render(request, 'category/add_category.html', {'category_form': category_form})

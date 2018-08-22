@@ -6,4 +6,4 @@ class CategoryForm(forms.ModelForm):
 
     class Meta:
         model = Category
-        fields = ('cat_name',)
+        fields = ('Name',)

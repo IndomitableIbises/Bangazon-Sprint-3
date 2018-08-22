@@ -7,4 +7,4 @@ from website.models import Category
 
 def list_categories(request):
     all_categories = Category.objects.all()
-    return render(request, 'category.html', {'all_categories': all_categories})
+    return render(request, 'category/list_category.html', {'all_categories': all_categories})

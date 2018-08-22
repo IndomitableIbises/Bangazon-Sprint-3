@@ -15,7 +15,7 @@ def sell_product(request):
     elif request.method == 'POST':
         form_data = request.POST
 
-        p = Product(
+        p = Product(  # p is a built in DOM manipulator - makes the form show up in paragraph form
             seller = request.user,
             title = form_data['title'],
             description = form_data['description'],

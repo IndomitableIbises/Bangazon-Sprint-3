@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
     "python.pythonPath": "/Users/eagobert/workspace/group-projects/indomitable-ibises/Bangazon-Sprint-3/venv/bin/python",
+=======
+    "python.pythonPath": "${workspaceFolder}\\bang\\Scripts\\python.exe",
+>>>>>>> master
     "python.linting.pylintEnabled": false
 }

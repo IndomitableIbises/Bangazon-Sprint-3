@@ -9,10 +9,10 @@ Model for Category include the following:
 '''
 
 class Category(models.Model):
-    cat_name = models.CharField(default="", max_length=100)
+    Name = models.CharField(default="", max_length=100)
 
     class Meta:
-        db_table = "category"
+        db_table = "Category"
 
     def __str__(self):
-        return self.cat_name
+        return self.Name

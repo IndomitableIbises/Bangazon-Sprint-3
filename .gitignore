@@ -9,16 +9,10 @@ obj
 bang
 /website/migrations/
 .vscode/
-<<<<<<< HEAD
 /website/tcl
 /website/Include
-/website/Lib
-.json
-=======
-/website/Include
-/website/tcl
 /website/Lib
 *.json
 *.h
 *.sh
->>>>>>> 082425e0cbae4902567a78e4f4621f710ae242c8
+.vscode

@@ -1,10 +1,13 @@
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-
+from website.models import Product
 from website.forms import ProductForm
 
-
+@login_required
 def sell_product(request):
     if request.method == 'GET':
+
         product_form = ProductForm()
         template_name = 'product/create.html'
         return render(request, template_name, {'product_form': product_form})

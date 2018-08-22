@@ -7,3 +7,6 @@ from .user_logout import user_logout
 # from .edit_profile import edit_profile
 from .list_categories import list_categories
 # from .add_payment import add_payment
+from .order_view import order_view
+from .delete_order import delete_order
+from .delete_order_item import delete_order_item

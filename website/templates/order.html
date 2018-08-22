@@ -1,13 +1,22 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Order Items</title>
 </head>
 <body>
-
-    {% for order in orders %}
-        <div class='order'> {{ order.id }} </div>
+    
+    {% for item in items %}
+        <div class='items'> {{ item.title }} </div>
+        <form action="{% url 'delete_order_item' pk=item.id %}" method="POST">
+            <button type="submit">Delete Item</button>
+          </form>
     {% endfor %}
+    <p>{{total}}</p>
+    <a href="url:delete_order" userorder.id><p>Delete Order</p></a>
+    <form action="{% url 'delete_order' pk=userorder.id %}" method="POST">
+        <button type="submit">Delete Order</button>
+    </form>
 
+    
 </body>
-</html> -->
+</html>

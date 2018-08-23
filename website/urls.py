@@ -2,19 +2,31 @@ from django.conf.urls import url
 from django.urls import include, path
 from django.views.generic import TemplateView
 
+
 from . import views
 
 app_name = "website"
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    #####################
+    # Login/Register URLs
     url(r'^login$', views.login_user, name='login'),
     url(r'^logout$', views.user_logout, name='logout'),
     url(r'^register$', views.register, name='register'),
+    #####################
+    #  Product URLs
     url(r'^sell$', views.sell_product, name='sell'),
     url(r'^products$', views.list_products, name='list_products'),
-    # url(r'^edit-profile$', views.edit_profile, name='edit_profile'),
+    #####################
+    # Profile URLs
+    url(r'^edit_profile$', views.edit_profile, name='edit_profile'),
+    url(r'^profile$', views.profile, name='profile'),
+    #####################
     # Category URLS
     url(r'^categories$', views.list_categories, name='list_categories'),
+    url(r'^add_category$', views.add_category, name='add_category'),
+    ######################
+    # Order URLS
     url(r'^order$', views.order_view, name='order'),
     url(r'^delete_order_item/(?P<item_id>[0-9]+)/$', views.delete_order_item, name='delete_order_item'),
     url(r'^delete_order/(?P<pk>[0-9]+)/$', views.delete_order, name='delete_order'),
@@ -22,4 +34,5 @@ urlpatterns = [
     url(r'^order_history$', views.order_history, name='order_history'),
     url(r'^order_detail/(?P<pk>[0-9]+)/$', views.order_detail, name='order_detail'),
     url(r'^thankyou$', TemplateView.as_view(template_name='thankyou.html'), name='thankyou'),
+    
 ]

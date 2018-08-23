@@ -1,19 +1,36 @@
 {% load staticfiles %}
+<!-- Co-Author: Raf -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Bangazon</title>
-  </head>
-  <body>
-    <h1>Welcome to Bangazon!</h1>
-    {% if user.is_authenticated %}
-    <h1>Bangazon says... hello {{ user.username }}!</h1>
-    <a href="{% url 'website:logout' %}">Logout</a>
-    {% else %}
-    <h1>Bangazon says...</h1>
-    <div><a href="{% url 'website:register' %}">Register</a></div>
-    <div><a href="{% url 'website:login' %}">Login</a></div>
-    {% endif %}
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bangazon</title>
+</head>
+
+<body>
+  {% include "navbar.html" with nav_location=view.location %}
+
+  {% block main %}
+  <h1>Welcome to Bangazon!</h1>
+
+  {% if user.is_authenticated %}
+  {% comment %} <h1>Hello, {{ user.username }}!</h1> {% endcomment %}
+
+  {% comment %} {% else %}
+  <div><a href="{% url 'website:register' %}">Register</a></div>
+  <div><a href="{% url 'website:login' %}">Login</a></div> {% endcomment %}
+  {% endif %}
+
+  {% block content %}
+  {% comment %} {% "product loop goes here" %} {% endcomment %}
+  <div>
+    PRODUCTS WILL DISPLAY HERE
+  </div>
+  {% comment %} {% endfor %} {% endcomment %}
+  {% endblock content %}
+  {% endblock main %}
+
+</body>
+
 </html>

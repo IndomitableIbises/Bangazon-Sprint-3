@@ -1,22 +1,20 @@
-{% block main %} {% include "navbar.html" with nav_location=view.location %} {% endblock main %}
+<!-- Author: Raf -->
+{% extends 'index.html' %}
 
-{% block main_stuff %}
 
+{% block main %}
 <h1> CATEGORIES, FOOL!</h1>
-<ul>
     {% for category in all_categories %}
-    <li>
+    <p>
         {{category.Name}}
-    </li>
+    </p>
     {% endfor %}
-</ul>
 
 {% if user.is_authenticated %}
 <form action="{% url 'website:add_category' %}" method="post">
     {% csrf_token %}
     {{ category_form }}
     <input type="submit" value="Add Category" />
-  </form>
+</form>
 {% endif %}
-
-{% endblock main_stuff %}
+{% endblock main %}

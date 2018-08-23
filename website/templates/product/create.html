@@ -1,3 +1,4 @@
+{% extends 'index.html' %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -5,6 +6,8 @@
     <meta charset="utf-8">
     <title>Bangazon</title>
   </head>
+
+  {% block main %}
   <body>
     <h1>Sell Product</h1>
 
@@ -15,5 +18,6 @@
       <input type="submit" value="Sell It" />
     </form>
   </body>
+  {% endblock main %}
 </html>
 

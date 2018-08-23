@@ -10,7 +10,7 @@
 
     <ol>
     {% for product in products %}
-        <li>{{ product.title }}</li>
+        <li><a href='products/<int:pk>'>{{ product.title }}</a></li>
     {% endfor %}
     </ol>
   </body>

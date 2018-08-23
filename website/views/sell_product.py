@@ -12,16 +12,18 @@ def sell_product(request):
         template_name = 'product/create.html'
         return render(request, template_name, {'product_form': product_form})
 
-    elif request.method == 'POST':
-        form_data = request.POST
+    # elif request.method == 'POST':
 
-        p = Product(  # p is a built in DOM manipulator - makes the form show up in paragraph form
-            seller = request.user,
-            title = form_data['title'],
-            description = form_data['description'],
-            price = form_data['price'],
-            quantity = form_data['quantity'],
-        )
-        p.save()
-        template_name = 'product/success.html'
-        return render(request, template_name, {})
+    #     form_data = request.POST
+
+    #     p = Product(  # p is a built in DOM manipulator - makes the form show up in paragraph form
+    #         seller = request.user,
+    #         title = form_data['title'],
+    #         description = form_data['description'],
+    #         price = form_data['price'],
+    #         quantity = form_data['quantity'],
+    #     )
+    #     p.save()
+    #     template_name = 'product/success.html'
+    #     context = {}
+    #     return render(request, template_name, context)

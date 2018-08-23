@@ -1,6 +1,7 @@
-{% comment %} Author: Raf {% endcomment %}
+<!-- Author: Raf -->
+{% extends 'index.html' %}
 
-
+{% block main %}
 <h1>Add a Category</h1>
 
 <form action="{% url 'website:add_category' %}" method="post">
@@ -8,3 +9,4 @@
   {{ category_form.as_p}}
   <input type="submit" value="Submit" />
 </form>
+{% endblock main %}

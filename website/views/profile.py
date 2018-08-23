@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from website.models import Profile
+from django.contrib.auth.models import User
 
 # from website.forms.forms import UserForm, ProductForm
 
 
 def profile(request):
-    template_name = 'profile.html'
-    return render(request, template_name, {})
+    user = request.user
+    u = User.objects.get(id=request.user.id)
+    profile = u.profile
+    return render(request, 'profile.html', {'user': user, 'profile': profile})

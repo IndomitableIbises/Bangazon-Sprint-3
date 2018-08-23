@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 from website.forms import ProfileForm, UserEditForm
 from website.models import Profile
@@ -31,4 +32,4 @@ def edit_profile(request):
             user_form.save()
             profile_form.save()
             
-            return render(request, 'profile.html', {'user_form': user_form, 'profile_form': profile_form,})
+            return redirect(reverse('website:profile'))

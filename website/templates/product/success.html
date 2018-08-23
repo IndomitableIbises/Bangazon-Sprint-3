@@ -1,3 +1,4 @@
+{% extends 'index.html' %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -5,11 +6,13 @@
     <meta charset="utf-8">
     <title>Bangazon</title>
   </head>
+  {% block main %}
   <body>
 
     <h1>Product Added</h1>
 
     <a href="{% url 'website:list_products' %}">List Products</a>
   </body>
+  {% endblock main %}
 </html>
 

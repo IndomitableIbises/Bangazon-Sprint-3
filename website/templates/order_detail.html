@@ -1,3 +1,4 @@
+{% extends 'index.html' %}
 <!DOCTYPE html>
 
 <!-- author SI -->
@@ -5,6 +6,7 @@
 <head>
     <title>Order Items</title>
 </head>
+{% block main %}
 <body>
 
     <h2>Order Number: {{order.id}}</h2>
@@ -14,5 +16,6 @@
     <p>Order Total: {{total}}</p>
     
 </body>
+{% endblock main %}
 </html>
 

@@ -1,9 +1,12 @@
+{% extends 'index.html' %}
 <!DOCTYPE html>
 <!-- author SI -->
 <html>
 <head>
     <title>Order Items</title>
 </head>
+
+{% block main %}
 <body>
     {% if userorderid != "error" %}
     {% for item in items %}
@@ -35,4 +38,6 @@
 
     
 </body>
+{% endblock main %}
+
 </html>

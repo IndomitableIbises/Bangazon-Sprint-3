@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from website.views import login_user
-from website.forms import UserForm
+from website.forms import UserForm, ProfileForm
 
 
 
@@ -18,10 +18,14 @@ def register(request):
     # on Django's built-in User model
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
+        profile_form = ProfileForm(data=request.POST)
 
         if user_form.is_valid():
             # Save the user's form data to the database.
             user = user_form.save()
+            profile = profile_form.save(commit=False)
+            profile.user = user
+            profile.save()
 
             # Now we hash the password with the set_password method.
             # Once hashed, we can update the user object.
@@ -34,6 +38,7 @@ def register(request):
         return login_user(request)
 
     elif request.method == 'GET': # If we go to /register, this will load. 
+        profile_form = ProfileForm()
         user_form = UserForm() # UserForm is from Django, 
-        return render(request, 'register.html', {'user_form': user_form})  # renders form
+        return render(request, 'register.html', {'user_form': user_form, 'profile_form': profile_form})  # renders form
         # {'user_form': user_form} <-- this contains the form objects

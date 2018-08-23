@@ -13,13 +13,9 @@ def add_payment(request):
 
     elif request.method == 'POST':
         form_data = request.POST
-
-        p = Payment(
-            user = request.user,
-            name = form_data['name'],
-            account_num = form_data['account_num'],
-            active = form_data['active'],
-        )
-        p.save()
+        payment = PaymentForm(form_data)
+        if payment.is_valid():
+            payment.save()
+            
         template_name = 'payment/success.html'
         return render(request, template_name, {})

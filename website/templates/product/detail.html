@@ -1,0 +1,21 @@
+<!-- Author: Erin -->
+
+{% block main_stuff %}
+
+
+{% load static %}
+<h1>PRODUCT DETAIL YO!</h1>
+
+<div class='product_detail'>
+<h3>Title: {{product.title}}</h3>
+<h3>Description: {{product.description}}</h3>
+<h3>Price: {{product.price}}</h3>
+<h3>Quantity: {{product.quantity}}</h3>
+
+{% for seller in product.seller.all %}
+
+    <h3>Seller: {{seller.first_name}} {{seller.last_name}}</h3>
+
+{% endfor %}
+</div>
+{% endblock main_stuff %}

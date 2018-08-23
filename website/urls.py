@@ -15,7 +15,7 @@ urlpatterns = [
     #Product URLs
     url(r'^sell$', views.sell_product, name='sell'),
     url(r'^products$', views.list_products, name='list_products'),
-    path('products/<int:pk>', views.ProductDetailView, name='product_detail'),
+    path('products/<int:pk>/', views.ProductDetailView, name='product_detail'),
 
     # url(r'^edit-profile$', views.edit_profile, name='edit_profile'),
     #####################

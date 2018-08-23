@@ -3,9 +3,8 @@ from website.models import Product
 #from website.forms import ProductForm
 
 
-def ProductDetailView(request, product_id):
+def ProductDetailView(request, pk):
     if request.method == 'GET':
-        product = Product.objects.get(pk=product_id)
-        template_name = 'product/detail.html'
+        product = Product.objects.get(pk=pk)
         context = {'product': product}
-        return render(request, template_name, context)
+        return render(request, 'product/detail.html', context)

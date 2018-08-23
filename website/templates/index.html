@@ -15,7 +15,7 @@
   <h1>Welcome to Bangazon!</h1>
 
   {% if user.is_authenticated %}
-  <h1>Hello, {{ user.username }}!</h1>
+  {% comment %} <h1>Hello, {{ user.username }}!</h1> {% endcomment %}
 
   {% comment %} {% else %}
   <div><a href="{% url 'website:register' %}">Register</a></div>

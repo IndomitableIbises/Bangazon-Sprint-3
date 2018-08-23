@@ -22,6 +22,7 @@
             </div>
         </li>
     <li><a href="{% url 'website:logout' %}">Logout</a></li>
+    <li class="rick"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> Hello, {{ user.username }}!</a></li>
     </ul>
     {% else %}
     <a href="{% url 'website:login' %}">Login</a>

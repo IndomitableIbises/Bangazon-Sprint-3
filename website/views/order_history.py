@@ -6,31 +6,26 @@ from django.template import RequestContext
 from website.models import Order, Payment
 from django.contrib.auth.models import User
 
-#author SI
 
 @login_required
-def order_view(request):
+def order_history(request):
 
-    userorder = Order.objects.filter(user=request.user.id).filter(payment__isnull=True)
-    total = 0
+    userorder = Order.objects.filter(user=request.user.id).filter(payment__isnull=False)
     userorderid = "error"
-    userpayment = "none"
+    userpayment = "None"
+    userorderid = []
     if(len(userorder)):
-        items = userorder[0].shopping_cart.all()
-        userorderid = userorder[0]
-        if len(Payment.objects.filter(user=request.user.id)):
+        for order in userorder:
+            items = order.shopping_cart.all()
+            userorderid.append(order)
             userpayment = Payment.objects.filter(user=request.user.id)
         
-        for item in items:
-            total += item.price
     else:
         items = ["No Active Orders"]
-
+        userorderid = "error"
     context = {
         'items': items,
-        'total': total,
-        'userorderid': userorderid,
-        'userpayment': userpayment
+        'userorderid': userorderid
     }
-    
-    return render(request, "order.html", context)
+
+    return render(request, "order_history.html", context)

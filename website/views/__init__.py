@@ -5,7 +5,8 @@ from .register import register
 from .sell_product import sell_product
 from .detail_product import ProductDetailView
 from .user_logout import user_logout
-# from .edit_profile import edit_profile
+from .edit_profile import edit_profile
+from .profile import profile
 from .list_categories import list_categories
 from .add_category import add_category
 # from .add_payment import add_payment

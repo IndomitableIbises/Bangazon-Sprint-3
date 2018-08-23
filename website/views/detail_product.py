@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from website.models import Product
-from django.contrib.auth.models import User
 
 
 def ProductDetailView(request, pk):

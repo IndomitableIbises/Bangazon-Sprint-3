@@ -17,4 +17,6 @@ urlpatterns = [
     url(r'^delete_order_item/(?P<item_id>[0-9]+)/$', views.delete_order_item, name='delete_order_item'),
     url(r'^delete_order/(?P<pk>[0-9]+)/$', views.delete_order, name='delete_order'),
     url(r'^complete_order$', views.complete_order, name='complete_order'),
+    url(r'^order_history$', views.order_history, name='order_history'),
+    url(r'^order_detail/(?P<pk>[0-9]+)/$', views.order_detail, name='order_detail'),
 ]

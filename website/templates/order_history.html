@@ -4,23 +4,17 @@
     <title>Order Items</title>
 </head>
 <body>
+
     {% if userorderid != "error" %}
+    {% for order in userorderid %}
+        <a href="{% url 'website:order_detail' pk=order.id %}"><p>Order Number: {{order.id}}</p></a>
     {% for item in items %}
         <div class='items'> {{ item.title }} </div>
-        <form action="{% url 'website:delete_order_item' item_id=item.id %}" method="POST">
-                {% csrf_token %}
-                <button type="submit">Delete Item</button>
-              </form> 
     {% endfor %}
-    <p>Order Total: {{total}}</p>
-    <form action="{% url 'website:delete_order' pk=userorderid.id %}" method="POST">
-        {% csrf_token %}
-        <button type="submit">Delete Order</button>
-    </form>
-
+    {% endfor %}
     
     {% else %}
-    <div>No Active Order</div>
+    <div>No Past Orders</div>
     {% endif %}
 
     

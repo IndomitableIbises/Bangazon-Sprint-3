@@ -11,3 +11,5 @@ from .order_view import order_view
 from .delete_order import delete_order
 from .delete_order_item import delete_order_item
 from .complete_order import complete_order
+from .order_history import order_history
+from .order_detail import order_detail

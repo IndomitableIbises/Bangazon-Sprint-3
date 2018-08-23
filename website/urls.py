@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^categories$', views.list_categories, name='list_categories'),
     url(r'^order$', views.order_view, name='order'),
     url(r'^delete_order_item/(?P<item_id>[0-9]+)/$', views.delete_order_item, name='delete_order_item'),
-    url(r'^delete_order/(?P<order_id>[0-9]+)/$', views.delete_order, name='delete_order'),
+    url(r'^delete_order/(?P<pk>[0-9]+)/$', views.delete_order, name='delete_order'),
+    url(r'^complete_order$', views.complete_order, name='complete_order'),
 ]

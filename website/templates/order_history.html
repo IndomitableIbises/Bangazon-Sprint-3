@@ -18,14 +18,7 @@
         <button type="submit">Delete Order</button>
     </form>
 
-    <h5>Payment</h5>
-    <form action="{% url 'website:complete_order' %}" method="POST">
-        {% csrf_token %}
-    {% for payment in userpayment %}
-        <input type="radio" name="payment" value={{payment.id}}>{{payment.name}}<br>
-    {% endfor %}
-    <button type="submit">Submit</button>
-    </form>
+    
     {% else %}
     <div>No Active Order</div>
     {% endif %}

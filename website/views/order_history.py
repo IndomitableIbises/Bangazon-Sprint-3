@@ -27,5 +27,5 @@ def order_history(request):
         'items': items,
         'userorderid': userorderid
     }
-    
+
     return render(request, "order_history.html", context)

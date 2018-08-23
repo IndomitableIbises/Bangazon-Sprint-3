@@ -1,3 +1,4 @@
+# Author:  Erin Agobert
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
@@ -6,6 +7,7 @@ from website.forms import ProductForm
 
 @login_required
 def sell_product(request):
+    """ View manages GETs the product form view and product detail view from POST request """
     if request.method == 'GET':
 
         product_form = ProductForm()

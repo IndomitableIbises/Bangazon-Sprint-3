@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from website.forms import PaymentForm
+from website.models import Payment
+from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.contrib.auth.decorators import login_required
 
-
-def sell_product(request):
+@login_required
+def add_payment(request):
     if request.method == 'GET':
-        product_form = PaymentForm()
+        payment_form = PaymentForm()
         template_name = 'payment/create.html'
         return render(request, template_name, {'payment_form': payment_form})
 

@@ -13,4 +13,8 @@ urlpatterns = [
     # url(r'^edit-profile$', views.edit_profile, name='edit_profile'),
     # Category URLS
     url(r'^categories$', views.list_categories, name='list_categories'),
+    url(r'^add_payment$', views.add_payment, name='add_payment'),
+    url(r'^payment_success$', views.payment_success, name='payment_success'),
+    url(r'^payment/(?P<pk>\d+)/delete$', views.delete_payment, name="delete_payment"),
+    url(r'^payments$', views.list_payments, name="list_payments"),
 ]

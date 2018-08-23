@@ -1,3 +1,3 @@
 from .userform import UserForm
 from .productform import ProductForm
-from .paymentform information PaymentForm
+from .paymentform import PaymentForm

@@ -5,6 +5,7 @@ from django.template import RequestContext
 from website.models import Order
 from django.contrib.auth.models import User
 
+#author SI
 
 
 @login_required
@@ -16,7 +17,7 @@ def order_detail(request, pk):
     items = order.shopping_cart.all()
     for item in items:
             total += item.price
-        
+
 
     context = {
         'order': order,

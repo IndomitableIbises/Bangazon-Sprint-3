@@ -1,3 +1,4 @@
+{% extends 'index.html' %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -5,7 +6,11 @@
     <meta charset="utf-8">
     <title>Bangazon</title>
   </head>
+
+  {% block main %}
   <body>
+
+    {% if user.is_authenticated %}
     <h1>Sell Product</h1>
 
 
@@ -14,6 +19,12 @@
       {{ product_form.as_p }}
       <input type="submit" value="Sell It" />
     </form>
+    {% else %}
+    <h1>Please login or register to sell a product.</h1>
+    <a href="{% url 'website:login' %}">Login</a>
+    <a href="{% url 'website:register' %}">Register</a>
+    {% endif %}
   </body>
+  {% endblock main %}
 </html>
 

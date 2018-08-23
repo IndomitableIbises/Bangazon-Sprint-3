@@ -16,7 +16,7 @@ def order_detail(request, pk):
     items = order.shopping_cart.all()
     for item in items:
             total += item.price
-    
+        
 
     context = {
         'order': order,

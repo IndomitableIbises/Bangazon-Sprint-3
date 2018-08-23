@@ -13,4 +13,4 @@ def complete_order(request):
     current_order_object.payment_id = request.POST['payment']
     current_order_object.completed_date = datetime.date.today()
     current_order_object.save()
-    return HttpResponseRedirect("/")
+    return HttpResponseRedirect("/thankyou")

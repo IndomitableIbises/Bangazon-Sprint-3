@@ -1,4 +1,6 @@
 from django.conf.urls import url
+from django.urls import include, path
+from django.views.generic import TemplateView
 
 from . import views
 
@@ -19,4 +21,5 @@ urlpatterns = [
     url(r'^complete_order$', views.complete_order, name='complete_order'),
     url(r'^order_history$', views.order_history, name='order_history'),
     url(r'^order_detail/(?P<pk>[0-9]+)/$', views.order_detail, name='order_detail'),
+    url(r'^thankyou$', TemplateView.as_view(template_name='thankyou.html'), name='thankyou'),
 ]

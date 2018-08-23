@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from website.models import Product
-#from website.forms import ProductForm
+from django.contrib.auth.models import User
 
 
 def ProductDetailView(request, pk):

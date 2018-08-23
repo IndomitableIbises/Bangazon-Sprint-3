@@ -31,10 +31,10 @@ class Command(BaseCommand):
     })
 
     #Seeds Category table
-    cat_name_list = ['electronics', 'books', 'movies', 'jewelry', 'clothing', 'furniture', 'shoes', 'supplies', 'beauty']
+    name_list = ['electronics', 'books', 'movies', 'jewelry', 'clothing', 'furniture', 'shoes', 'supplies', 'beauty']
 
     seeder.add_entity(Category, 5, {
-      'cat_name': lambda x: seeder.faker.word(ext_word_list=cat_name_list)
+      'Name': lambda x: seeder.faker.word(ext_word_list=name_list)
     })
 
     #Seeds Product table

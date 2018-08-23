@@ -13,11 +13,12 @@ def order_view(request):
     userorder = Order.objects.filter(user=request.user.id).filter(payment__isnull=True)
     total = 0
     userorderid = "error"
-    userpayment = "None"
+    userpayment = "none"
     if(len(userorder)):
         items = userorder[0].shopping_cart.all()
         userorderid = userorder[0]
-        userpayment = Payment.objects.filter(user=request.user.id)
+        if len(Payment.objects.filter(user=request.user.id)):
+            userpayment = Payment.objects.filter(user=request.user.id)
         
         for item in items:
             total += item.price

@@ -19,6 +19,7 @@
     </form>
 
     <h5>Payment</h5>
+    {% if userpayment != "none" %}
     <form action="{% url 'website:complete_order' %}" method="POST">
         {% csrf_token %}
     {% for payment in userpayment %}
@@ -26,6 +27,7 @@
     {% endfor %}
     <button type="submit">Submit</button>
     </form>
+    {% endif %}
     {% else %}
     <div>No Active Order</div>
     {% endif %}

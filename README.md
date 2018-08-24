@@ -13,11 +13,11 @@ You'll need the following:
 1. If using a faker factory, populate database with data
 1. Run server
 
-## Order
+# Order
 
   With no products, orders or payment:
   
-- /order will show a blank screen
+-/order will show a blank screen
 
 -order history will say there is no order history
 

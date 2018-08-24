@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from website.models import Product
 from website.forms import ProductForm
 
 

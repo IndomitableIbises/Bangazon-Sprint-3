@@ -16,4 +16,6 @@ bang
 *.json
 *.h
 *.sh
+.DS_Store
+
 

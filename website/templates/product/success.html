@@ -1,4 +1,5 @@
 {% extends 'index.html' %}
+<!-- Author:  Erin Agobert -->
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -8,10 +9,17 @@
   </head>
   {% block main %}
   <body>
-
-    <h1>Product Added</h1>
-
+    
     <a href="{% url 'website:list_products' %}">List Products</a>
+    <h1>Product Added</h1>
+    <div class='product_detail'>
+        <h3>Title: {{product.title}}</h3>
+        <h3>Description: {{product.description}}</h3>
+        <h3>Price: {{product.price}}</h3>
+        <h3>Quantity: {{product.quantity}}</h3>
+
+
+    
   </body>
   {% endblock main %}
 </html>

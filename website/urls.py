@@ -16,9 +16,11 @@ urlpatterns = [
     url(r'^logout$', views.user_logout, name='logout'),
     url(r'^register$', views.register, name='register'),
     #####################
-    #  Product URLs
+    #Product URLs
     url(r'^sell$', views.sell_product, name='sell'),
     url(r'^products$', views.list_products, name='list_products'),
+    path('products/<int:pk>/', views.ProductDetailView, name='product_detail'),
+    path('sell/<int:pk>/', views.ProductDetailView, name='product_post'),
     #####################
     # Profile URLs
     url(r'^edit_profile$', views.edit_profile, name='edit_profile'),

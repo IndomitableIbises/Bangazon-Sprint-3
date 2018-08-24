@@ -7,6 +7,8 @@ from . import views
 
 app_name = "website"
 urlpatterns = [
+    #####################
+    # Index/Home URLs
     url(r'^$', views.index, name='index'),
     #####################
     # Login/Register URLs
@@ -26,11 +28,14 @@ urlpatterns = [
     #####################
     # Category URLS
     url(r'^categories$', views.list_categories, name='list_categories'),
+    url(r'^add_category$', views.add_category, name='add_category'),
+    #####################
+    # Payment URLs
     url(r'^add_payment$', views.add_payment, name='add_payment'),
     url(r'^payment_success$', views.payment_success, name='payment_success'),
     url(r'^payment/(?P<pk>\d+)/delete$', views.delete_payment, name="delete_payment"),
     url(r'^payments$', views.list_payments, name="list_payments"),
-    url(r'^add_category$', views.add_category, name='add_category'),
+    #####################
     # Order URLS
     url(r'^order$', views.order_view, name='order'),
     url(r'^delete_order_item/(?P<item_id>[0-9]+)/$', views.delete_order_item, name='delete_order_item'),
@@ -39,4 +44,5 @@ urlpatterns = [
     url(r'^order_history$', views.order_history, name='order_history'),
     url(r'^order_detail/(?P<pk>[0-9]+)/$', views.order_detail, name='order_detail'),
     url(r'^thankyou$', TemplateView.as_view(template_name='thankyou.html'), name='thankyou'),
+    #####################
 ]

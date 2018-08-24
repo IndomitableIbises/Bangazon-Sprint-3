@@ -11,19 +11,19 @@
 <body>
   <h1>Payments</h1>
 
-  <ol>
+  <div>
     {% for payment in payments %}
-    <li>{{ payment.name }}</li>
+    <p>{{ payment.name }}</p>
     {% endfor %}
-  </ol>
+  </div>
 
   {% if user.is_authenticated %}
   <form action="{% url 'website:add_payment' %}" method="post">
     {% csrf_token %} {{ payment_form.as_p }}
-    <input type="submit" value="Add Payment" />
-    {% comment %} <a href="{% url 'website:list_payments' %}">List Payments</a> {% endcomment %}
+    <input type="submit" value="Add Payment" /> {% comment %} <a href="{% url 'website:list_payments' %}">List Payments</a>
+    {% endcomment %}
   </form>
-{% endif %}
+  {% endif %}
 </body>
 {% endblock main %}
 

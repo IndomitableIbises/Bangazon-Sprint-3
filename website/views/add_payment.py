@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from website.forms import PaymentForm
 from website.models import Payment
 from django.http import HttpResponse, HttpResponseRedirect, Http404
@@ -12,7 +12,7 @@ def add_payment(request):
         if payment_form.is_valid():
             new_category = payment_form.save()
             new_category.save()
-            return redirect('website:success.html')
+            return redirect('website:payment_success')
 
 
     return render(request, 'payment/create.html', {'payment_form': payment_form})

@@ -6,7 +6,19 @@
 <nav>
     <ul class="nav_ul">
         <li><a href="{% url 'website:index' %}">Home</a></li>
-        <li><input type="search" placeholder="Search For Goodies"></li>
+        <li>
+            {% if user.is_authenticated %}
+            <form action="{% url 'website:list_products' %}" class="search_bar">
+                <input type="text" id="search" name="search_terms">
+                <input type="submit" value="Search">
+            </form>
+            {% else %}
+            <form action="{% url 'website:login' %}" class="search_bar">
+                <input type="text" id="search" name="search_terms">
+                <input type="submit" value="Search">
+            </form>
+            {% endif %}
+        </li>
         <li><a href="{% url 'website:list_categories' %}">Categories</a></li>
         <li><a href="{% url 'website:list_products' %}">All Products</a></li>
         {% if user.is_authenticated %}
@@ -23,8 +35,8 @@
                 <a href="#">Payment</a>
             </div>
         </li>
-    <li><a href="{% url 'website:logout' %}">Logout</a></li>
-    <li class="rick"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> Hello, {{ user.username }}!</a></li>
+        <li><a href="{% url 'website:logout' %}">Logout</a></li>
+        <li class="rick"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> Hello, {{ user.username }}!</a></li>
     </ul>
     {% else %}
     <a href="{% url 'website:login' %}">Login</a>

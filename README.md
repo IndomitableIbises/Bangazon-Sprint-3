@@ -14,7 +14,9 @@ You'll need the following:
 1. Run server
 
 ## Order
+
   With no products, orders or payment:
+  
 - /order will show a blank screen
 
 -order history will say there is no order history

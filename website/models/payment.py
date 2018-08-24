@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.db import models
+from django import forms
 
 # Create your models here.
 class Payment(models.Model):
@@ -13,7 +14,7 @@ class Payment(models.Model):
 
     name = models.CharField(max_length=250)
     account_num = models.IntegerField()
-    active = models.BooleanField()
+    active = models.BooleanField('payment status', default=False) 
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,

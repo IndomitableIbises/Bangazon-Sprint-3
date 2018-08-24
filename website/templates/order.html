@@ -1,13 +1,38 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
+<!-- author SI -->
 <html>
 <head>
     <title>Order Items</title>
 </head>
 <body>
-
-    {% for order in orders %}
-        <div class='order'> {{ order.id }} </div>
+    {% if userorderid != "error" %}
+    {% for item in items %}
+        <div class='items'> {{ item.title }} </div>
+        <form action="{% url 'website:delete_order_item' item_id=item.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Delete Item</button>
+              </form> 
     {% endfor %}
+    <p>Order Total: {{total}}</p>
+    <form action="{% url 'website:delete_order' pk=userorderid.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Delete Order</button>
+    </form>
 
+    <h5>Payment</h5>
+    {% if userpayment != "none" %}
+    <form action="{% url 'website:complete_order' %}" method="POST">
+        {% csrf_token %}
+    {% for payment in userpayment %}
+        <input type="radio" name="payment" value={{payment.id}}>{{payment.name}}<br>
+    {% endfor %}
+    <button type="submit">Submit</button>
+    </form>
+    {% endif %}
+    {% else %}
+    <div>No Active Order</div>
+    {% endif %}
+
+    
 </body>
-</html> -->
+</html>

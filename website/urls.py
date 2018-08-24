@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^products$', views.list_products, name='list_products'),
     path('products/<int:pk>/', views.ProductDetailView, name='product_detail'),
     path('sell/<int:pk>/', views.ProductDetailView, name='product_post'),
+    url(r'^my_products/', views.my_products, name='my_products'),
     #####################
     # Profile URLs
     url(r'^edit_profile$', views.edit_profile, name='edit_profile'),

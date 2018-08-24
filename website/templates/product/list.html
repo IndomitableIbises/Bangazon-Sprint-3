@@ -13,7 +13,7 @@
 
 
     {% for product in products %}
-        <p>{{ product.title }}</p>
+       <p> <a href="{% url 'website:product_detail' product.id %}">{{ product.title }}</a></p>
     {% endfor %}
 
   </body>

@@ -10,18 +10,22 @@
 
 <body>
   <h1>Payments</h1>
+    <ol>
 
-  <div>
     {% for payment in payments %}
-    <p>{{ payment.name }}</p>
+        {% if payment.active != False %}
+        <li>{{ payment.name }}     - <a href="{% url 'website:delete_payment' pk=payment.id %}">Delete</a></li>
+        {% endif %}
+
     {% endfor %}
-  </div>
+  </ol>
+  
 
   {% if user.is_authenticated %}
   <form action="{% url 'website:add_payment' %}" method="post">
     {% csrf_token %} {{ payment_form.as_p }}
-    <input type="submit" value="Add Payment" /> {% comment %} <a href="{% url 'website:list_payments' %}">List Payments</a>
-    {% endcomment %}
+    <input type="submit" value="Add Payment" /> 
+    {% comment %} <a href="{% url 'website:list_payments' %}">List Payments</a>{% endcomment %}
   </form>
   {% endif %}
 </body>

@@ -1,23 +1,26 @@
+{% extends 'index.html' %}
 <!DOCTYPE html>
 <!-- author SI -->
 <html>
+
 <head>
     <title>Order Items</title>
 </head>
+
+{% block main %}
+
 <body>
 
-    {% if userorderid != "error" %}
-    {% for order in userorderid %}
-        <a href="{% url 'website:order_detail' pk=order.id %}"><p>Order Number: {{order.id}}</p></a>
+    {% if userorderid != "error" %} {% for order in userorderid %}
+    <a href="{% url 'website:order_detail' pk=order.id %}"><p>Order Number: {{order.id}}</p></a>
     {% for item in items %}
-        <div class='items'> {{ item.title }} </div>
-    {% endfor %}
-    {% endfor %}
-    
-    {% else %}
+    <div class='items'> {{ item.title }} </div>
+    {% endfor %} {% endfor %} {% else %}
     <div>No Past Orders</div>
     {% endif %}
 
-    
+
 </body>
+{% endblock main %}
+
 </html>

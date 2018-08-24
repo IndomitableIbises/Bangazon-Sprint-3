@@ -24,7 +24,9 @@
     <form action="{% url 'website:complete_order' %}" method="POST">
         {% csrf_token %}
     {% for payment in userpayment %}
+        {% if payment.active != False %}
         <input type="radio" name="payment" value={{payment.id}}>{{payment.name}}<br>
+        {% endif %}
     {% endfor %}
     <button type="submit">Submit</button>
     </form>

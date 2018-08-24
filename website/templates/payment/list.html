@@ -9,8 +9,11 @@
     <h1>Payments</h1>
 
     <ol>
+
     {% for payment in payments %}
-        <li>{{ payment.name }}</li>
+        {% if payment.active != False %}
+        <li>{{ payment.name }}     - <a href="{% url 'website:delete_payment' pk=payment.id %}">Delete</a></li>
+        {% endif %}
     {% endfor %}
     </ol>
   </body>

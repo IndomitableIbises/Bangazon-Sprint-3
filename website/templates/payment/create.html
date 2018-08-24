@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <title>Bangazon</title>
 </head>
+
 {% block main %}
 
 <body>
@@ -15,9 +16,9 @@
   <form action="{% url 'website:add_payment' %}" method="post">
     {% csrf_token %} {{ payment_form.as_p }}
     <input type="submit" value="Add Payment" />
-    <a href="{% url 'website:list_payments' %}">List Payments</a>
+    {% comment %} <a href="{% url 'website:list_payments' %}">List Payments</a> {% endcomment %}
   </form>
 </body>
-{% endblock: main %}
+{% endblock main %}
 
 </html>

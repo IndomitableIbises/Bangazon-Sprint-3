@@ -16,6 +16,14 @@
     <li>{{ payment.name }}</li>
     {% endfor %}
   </ol>
+
+  {% if user.is_authenticated %}
+  <form action="{% url 'website:add_payment' %}" method="post">
+    {% csrf_token %} {{ payment_form.as_p }}
+    <input type="submit" value="Add Payment" />
+    {% comment %} <a href="{% url 'website:list_payments' %}">List Payments</a> {% endcomment %}
+  </form>
+{% endif %}
 </body>
 {% endblock main %}
 

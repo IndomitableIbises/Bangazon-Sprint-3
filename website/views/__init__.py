@@ -20,6 +20,6 @@ from .delete_order_item import delete_order_item
 from .complete_order import complete_order
 from .order_history import order_history
 from .order_detail import order_detail
-
+from .my_products import my_products
 from .add_category import add_category
 

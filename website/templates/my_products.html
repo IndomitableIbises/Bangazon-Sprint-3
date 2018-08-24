@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+
+<!-- author SI -->
+<html>
+<head>
+    <title>My Products</title>
+</head>
+{% block main %}
+<body>
+
+    
+    {% for item in productlist %}
+        <div> {{ item }} </div>
+    {% endfor %}
+    
+</body>
+{% endblock main %}
+</html>
+

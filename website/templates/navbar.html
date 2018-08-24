@@ -30,7 +30,7 @@
             <div class="dropdown_content">
                 {% if user.is_authenticated %}
                 <a href="{% url 'website:profile' %}">My Profile</a>
-                <a href="#">My Products</a>
+                <a href="{% url 'website:my_products' %}">My Products</a>
                 <a href="{% url 'website:order_history' %}">Order History</a>
                 <a href="{% url 'website:list_payments' %}">Payments</a>
                 <a href="{% url 'website:order' %}">Shopping Cart</a>

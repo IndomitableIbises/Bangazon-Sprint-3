@@ -14,7 +14,7 @@ class Payment(models.Model):
 
     name = models.CharField(max_length=250)
     account_num = models.IntegerField()
-    active = models.BooleanField('payment status', default=False) 
+    active = models.BooleanField('payment status', default=True) 
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
